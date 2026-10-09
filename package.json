@@ -1,0 +1,9 @@
+{
+  "name": "conecta-ofertas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Página do grupo Conecta Ofertas no WhatsApp",
+  "type": "module",
+  "scripts": { "dev": "node scripts/serve.mjs", "start": "node scripts/serve.mjs" },
+  "engines": { "node": ">=20" }
+}

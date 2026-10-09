@@ -42,3 +42,24 @@ Novos sites hospedados em Sites começam privados. Antes de divulgar, o acesso p
 - FAQ usa `details` nativo; os links essenciais funcionam sem JavaScript.
 - Layouts preparados para desktop e celular, com foco visível e suporte a movimento reduzido.
 - Revisão visual em navegador não concluída: o navegador integrado estava indisponível nesta sessão.
+
+## Estado da retomada
+
+A implementação está completa para a primeira versão da landing page. A revisão local confirmou os arquivos estáticos, os quatro links do grupo, as âncoras internas e a sintaxe JavaScript. O servidor local respondeu HTTP 200.
+
+A publicação **não foi concluída**. A consulta ao projeto preservado em `.openai/hosting.json` retornou `Sites project not found` na conexão atual. É necessário recuperar acesso ao projeto na conta/workspace que o criou antes de retomar a publicação; não substituir o identificador por outro inventado.
+
+O pacote local foi gerado em `.artifacts/conecta-ofertas.tar.gz`. O erro de empacotamento da sessão anterior era uma incompatibilidade entre os caminhos Windows e Bash. Para regenerar neste computador, execute no PowerShell:
+
+```powershell
+& 'C:\Program Files\Git\bin\bash.exe' 'C:/Users/natha/.codex/plugins/cache/openai-curated-remote/sites/1.0.0/skills/sites/scripts/package-site.sh' '/d/.Code/conecta-ofertas' '/d/.Code/conecta-ofertas/.artifacts/conecta-ofertas.tar.gz'
+```
+
+Esse comando apenas empacota; não sincroniza o código nem publica. Antes de publicar uma alteração, o fluxo de hospedagem deve sincronizar o commit correspondente e gerar o pacote desse mesmo estado.
+
+Pendências de lançamento:
+
+- Recuperar acesso ao projeto de hospedagem e concluir o deploy.
+- Conferir visualmente desktop e celular em navegador.
+- Liberar o acesso público quando solicitado e configurar o domínio no Registro.br com os registros retornados pela hospedagem.
+- Após ativar o domínio, atualizar os metadados de compartilhamento e a URL canônica.

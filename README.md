@@ -68,6 +68,12 @@ Não é necessário alterar os botões da página principal. Eles continuam apon
 
 O perfil oficial é `@conecta.ofertas0`. O link aparece no menu, na chamada principal, na chamada final e no rodapé da página.
 
+## Últimas ofertas
+
+A página principal possui uma vitrine fixa em `#ultimas-ofertas`. Cada card reúne loja, horário da publicação, descrição curta, preço anterior, preço atual, desconto e link externo.
+
+Para atualizar a vitrine, edite os quatro elementos com a classe `offer-card` em `dist/index.html`. Atualize também a data exibida no cabeçalho e no aviso abaixo dos cards. As ilustrações são SVGs locais e não dependem de imagens hospedadas pelas lojas.
+
 ## Privacidade e compras
 
 O site não realiza compras nem coleta cadastros; preços, estoque e condições são conferidos nas lojas acessadas por meio das ofertas compartilhadas no grupo.

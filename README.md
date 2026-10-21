@@ -1,6 +1,13 @@
 # Conecta Ofertas
 
-Landing page estática em português para o grupo Conecta Ofertas no WhatsApp. O site usa somente HTML, CSS e JavaScript, sem framework, dependências ou etapa de build.
+Landing page estática em português para o Conecta Ofertas. O site divulga o grupo no WhatsApp e o perfil oficial no Instagram usando somente HTML, CSS e JavaScript, sem framework, dependências ou etapa de build.
+
+## Site e canais oficiais
+
+- Site publicado: <https://mariott0.github.io/conecta-ofertas/>
+- Endereço permanente do grupo: <https://mariott0.github.io/conecta-ofertas/grupo/>
+- Instagram: <https://www.instagram.com/conecta.ofertas0/?hl=pt-br>
+- Domínio planejado: <https://conectaofertas.com.br/>
 
 ## Publicação no GitHub Pages
 
@@ -13,7 +20,7 @@ No GitHub, faça apenas esta configuração uma vez:
 3. Envie as alterações para a branch `main`.
 4. Acompanhe o workflow **Publicar no GitHub Pages** na aba **Actions**.
 
-O arquivo `dist/CNAME` configura o domínio `conectaofertas.com.br`. Os registros DNS do domínio também precisam apontar para o GitHub Pages. Se quiser testar primeiro pelo endereço padrão `mariott0.github.io/conecta-ofertas/`, remova temporariamente o arquivo `dist/CNAME`.
+O arquivo `dist/CNAME` registra o domínio pretendido, `conectaofertas.com.br`. Para ativá-lo, também é necessário adicionar o domínio em **Settings → Pages → Custom domain** e configurar os registros DNS no provedor do domínio. O arquivo `CNAME` sozinho não altera o DNS.
 
 ## Rodar localmente
 
@@ -24,6 +31,8 @@ npm run dev
 ```
 
 Depois, abra <http://localhost:4173>.
+
+O servidor local também reconhece páginas em subpastas. Para testar o redirecionador, abra <http://localhost:4173/grupo/>.
 
 ## Estrutura
 
@@ -39,8 +48,26 @@ Todos os caminhos dos arquivos do site são relativos, então a página funciona
 
 ## Link do grupo
 
-Os botões levam para `/grupo/`, um endereço permanente do próprio site. O destino ativo está em `dist/grupo/index.html`; quando o convite mudar, atualize as três ocorrências da URL do WhatsApp nesse único arquivo.
+Os quatro botões de entrada levam para `/grupo/`, um endereço permanente do próprio site. Essa página encaminha o visitante ao convite ativo usando JavaScript, redirecionamento HTML e um botão manual de segurança.
 
 Convite ativo (grupo 1): <https://chat.whatsapp.com/EzeW2WLFdlSBqIMMpygiN5>.
+
+### Trocar o convite
+
+Quando o convite expirar ou um novo grupo for criado:
+
+1. Abra `dist/grupo/index.html`.
+2. Substitua as três ocorrências do convite atual pela nova URL do WhatsApp.
+3. Teste localmente em <http://localhost:4173/grupo/>.
+4. Faça commit e push para a branch `main`.
+5. Aguarde o workflow **Publicar no GitHub Pages** terminar.
+
+Não é necessário alterar os botões da página principal. Eles continuam apontando para `/grupo/`.
+
+## Instagram
+
+O perfil oficial é `@conecta.ofertas0`. O link aparece no menu, na chamada principal, na chamada final e no rodapé da página.
+
+## Privacidade e compras
 
 O site não realiza compras nem coleta cadastros; preços, estoque e condições são conferidos nas lojas acessadas por meio das ofertas compartilhadas no grupo.

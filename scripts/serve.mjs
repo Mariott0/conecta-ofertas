@@ -9,7 +9,8 @@ const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=
 http.createServer(async (req, res) => {
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-    const file = path.resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
+    const requestPath = pathname.endsWith('/') ? pathname + 'index.html' : pathname;
+    const file = path.resolve(root, '.' + requestPath);
     const relative = path.relative(root, file);
     if (relative.startsWith('..') || path.isAbsolute(relative)) {
       res.writeHead(403).end('Acesso negado');

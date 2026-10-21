@@ -31,6 +31,7 @@ Depois, abra <http://localhost:4173>.
 - `dist/styles.css`: identidade visual e layouts responsivos.
 - `dist/app.js`: comportamento do botão móvel e ano do rodapé.
 - `dist/assets/`: logo, favicon e fontes locais.
+- `dist/grupo/index.html`: redirecionador permanente para o convite ativo do WhatsApp.
 - `dist/.nojekyll`: impede processamento desnecessário pelo Jekyll.
 - `.github/workflows/deploy-pages.yml`: publicação automática no GitHub Pages.
 
@@ -38,4 +39,8 @@ Todos os caminhos dos arquivos do site são relativos, então a página funciona
 
 ## Link do grupo
 
-Os botões levam para <https://achadinho.pro/conectaofertas>. O site não realiza compras nem coleta cadastros; preços, estoque e condições são conferidos nas lojas acessadas por meio das ofertas compartilhadas no grupo.
+Os botões levam para `/grupo/`, um endereço permanente do próprio site. O destino ativo está em `dist/grupo/index.html`; quando o convite mudar, atualize as três ocorrências da URL do WhatsApp nesse único arquivo.
+
+Convite ativo (grupo 1): <https://chat.whatsapp.com/EzeW2WLFdlSBqIMMpygiN5>.
+
+O site não realiza compras nem coleta cadastros; preços, estoque e condições são conferidos nas lojas acessadas por meio das ofertas compartilhadas no grupo.
